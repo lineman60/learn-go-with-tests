@@ -29,5 +29,9 @@ func TestArea(t *testing.T) {
 		circle := Circle{10}
 		checkArea(t, circle, 314.1592653589793 )
 	})
+	t.Run("triangle", func(t *testing.T){
+		triangle := Triangle{12.0, 6.0}
+		checkArea(t, triangle, 36.0)
+	})
 
 }
