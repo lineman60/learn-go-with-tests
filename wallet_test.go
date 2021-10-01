@@ -1,15 +1,20 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestWallet(t *testing.T){
 	wallet := Wallet{}
 
-	wallet.Deposit(10)
+	wallet.Deposit(Bitcoin(10))
 	got := wallet.Balance()
-	want := 10
+	fmt.Printf("address of balance in test in %v \n", &wallet.balance)
+	want := Bitcoin(20)
+
 
 	if got != want {
-		t.Errorf("got %d want %d", got, want)
+		t.Errorf("got %s want %s", got, want)
 	}
 }
